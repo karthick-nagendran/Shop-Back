@@ -1,0 +1,8 @@
+Feature: Login to the app
+
+  @2 @reset
+  Scenario: I want to logout from Application     [90m# features/Signin.feature:10[0m
+    [32mGiven [0m[32mI am on App launch screen[0m               [90m# SignInSteps.iAmOnAppLaunchScreen()[0m
+    [32mAnd [0m[32mI login to the app[0m                        [90m# SignInSteps.iLogignToTheApp()[0m
+    [32mWhen [0m[32mI logout from app[0m                        [90m# SignInSteps.iLogoutFromApp()[0m
+    [32mThen [0m[32mI should see the text [0m[32m[1mSign up with email[0m [90m# SignInSteps.iShouldSeeTheTextSignUpWithEmail(String)[0m

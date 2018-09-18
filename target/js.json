@@ -1,0 +1,108 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 20905520523,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.startClient(Scenario)"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "I want to logout from Application",
+        "description": "",
+        "id": "login-to-the-app;i-want-to-logout-from-application",
+        "after": [
+          {
+            "result": {
+              "duration": 1525391739,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.closeDriver(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 5293613332,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "I am on App launch screen",
+            "match": {
+              "location": "SignInSteps.iAmOnAppLaunchScreen()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 9087134991,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I login to the app",
+            "match": {
+              "location": "SignInSteps.iLogignToTheApp()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3550953616,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I logout from app",
+            "match": {
+              "location": "SignInSteps.iLogoutFromApp()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 1981386665,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "I should see the text Sign up with email",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Sign up with email",
+                  "offset": 22
+                }
+              ],
+              "location": "SignInSteps.iShouldSeeTheTextSignUpWithEmail(String)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 9,
+            "name": "@2"
+          },
+          {
+            "line": 9,
+            "name": "@reset"
+          }
+        ]
+      }
+    ],
+    "name": "Login to the app",
+    "description": "",
+    "id": "login-to-the-app",
+    "keyword": "Feature",
+    "uri": "features/Signin.feature"
+  }
+]
