@@ -9,10 +9,12 @@ import org.testng.Assert;
 import pages.SignInPage;
 import utils.AppiumHelper;
 
-public class SignInSteps extends SignInPage{
+import static utils.Locators.shopBackGoTitle;
+
+public class SignInSteps extends SignInPage {
 
     @Given("^I am on App launch screen$")
-    public void iAmOnAppLaunchScreen(){
+    public void iAmOnAppLaunchScreen() {
         verifyWelcomeScreen();
     }
 
@@ -37,5 +39,22 @@ public class SignInSteps extends SignInPage{
         String textPath = String.format("//android.widget.TextView[@text='%s']", visibilityText);
         AppiumHelper.waitForVisibilityOfElement(By.xpath(textPath));
         Assert.assertTrue(AppiumHelper.checkVisiablityOfText(textPath));
+    }
+
+    @When("^I click on (.*) button$")
+    public void iClickOnShopBackGoButton(String visibilityText) throws Throwable {
+        String textPath = String.format("//*[@text='%s']", visibilityText);
+        AppiumHelper.waitForVisibilityOfElement(By.xpath(textPath));
+        AppiumHelper.clickOnButton(textPath);
+    }
+
+    @Then("^I should see the shop back go screen$")
+    public void iShouldSeeTheShopBackGoScreen() throws Throwable {
+        Assert.assertTrue(AppiumHelper.checkElementExists(shopBackGoTitle));
+    }
+
+    @When("^I click on first result from shop back go result$")
+    public void iClickOnFirstResultFromShopBackGoResult() throws Throwable {
+        clickOnFirstResultfromSBG();
     }
 }

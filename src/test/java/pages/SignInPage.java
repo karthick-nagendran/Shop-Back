@@ -35,4 +35,8 @@ public class SignInPage extends ConfigDriver {
         AppiumHelper.waitForVisibilityOfElement(userLogoutBtn);
         driver.findElement(userLogoutBtn).click();
     }
+
+    protected  void clickOnFirstResultfromSBG(){
+        driver.findElements(shopBackStoreResult).get(0).click();
+    }
 }

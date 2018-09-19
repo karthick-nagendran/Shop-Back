@@ -62,28 +62,28 @@ public class AppiumHelper extends ConfigDriver {
         Dimension size = slider.getSize();
         switch (direction.toLowerCase()) {
             case "left":
-                startX = size.width - 20 ;
+                startX = size.width - 20;
                 startY = size.height / 2;
                 endX = size.width / 2;
-                endY = size.height /2;
+                endY = size.height / 2;
                 break;
             case "right":
-                startX = size.width - 20 ;
+                startX = size.width - 20;
                 startY = size.height / 2;
                 endX = size.width / 2;
-                endY = size.height /2;
+                endY = size.height / 2;
                 break;
             case "up":
-                startX = size.width / 2 ;
+                startX = size.width / 2;
                 startY = size.height / 2;
                 endX = size.width / 2;
-                endY = size.height -20;
+                endY = size.height - 20;
                 break;
             case "down":
-                startX = size.width /2 ;
+                startX = size.width / 2;
                 startY = size.height - 20;
                 endX = size.width / 2;
-                endY = size.height /2;
+                endY = size.height / 2;
                 break;
             default:
                 break;
@@ -95,7 +95,7 @@ public class AppiumHelper extends ConfigDriver {
     }
 
     /**
-     *Scroll down or up until find the given element
+     * Scroll down or up until find the given element
      */
     public static void scrollUntilVisibilityOf(String direction, String locatorName) {
         int swipeCount = 0;
@@ -140,7 +140,11 @@ public class AppiumHelper extends ConfigDriver {
         return state;
     }
 
-    public static boolean checkVisiablityOfText(String stringElement){
+    public static boolean checkVisiablityOfText(String stringElement) {
         return driver.findElement(By.xpath(stringElement)).isDisplayed();
+    }
+
+    public static void clickOnButton(String element) {
+        driver.findElement(By.xpath(element)).click();
     }
 }
