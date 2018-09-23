@@ -36,7 +36,17 @@ public class SignInPage extends ConfigDriver {
         driver.findElement(userLogoutBtn).click();
     }
 
-    protected  void clickOnFirstResultfromSBG(){
-        driver.findElements(shopBackStoreResult).get(0).click();
+    protected  void clickOnFirstResultfromSBG(int resultRow){
+        driver.findElements(shopBackStoreResult).get(resultRow-1).click();
+    }
+
+    protected void verifyQuickAccessScreen(){
+        if(!AppiumHelper.checkElementExists(shopBackGoBtn)){
+            AppiumHelper.waitForVisibilityOfElement(selectBtn);
+            driver.findElement(selectBtn).click();
+            AppiumHelper.waitForVisibilityOfElement(getStartedBtn);
+            driver.findElement(getStartedBtn).click();
+            AppiumHelper.clickOnButton("//android.widget.TextView[@text='SKIP']");
+        }
     }
 }

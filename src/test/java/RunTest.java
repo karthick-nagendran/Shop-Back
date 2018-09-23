@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import utils.ConfigDriver;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(format = {"pretty:target/pr.txt", "html:target/ht", "json:target/js.json"}, tags = {"@2"}
+@CucumberOptions(format = {"pretty:target/pr.txt", "html:target/ht", "json:target/js.json"}
         //features = {"src/test/resources/sanity.feature"},
         //glue = "com.test.steps"
 )

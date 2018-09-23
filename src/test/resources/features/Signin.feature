@@ -15,7 +15,7 @@ Feature: Login to the app
 
   @3 @reset
   Scenario: I want to verify the shop back go screen
-    Given I login to the app
+    Given I am on quick access page
     When I click on ShopBack GO button
     And I click on Deny button
     # or Allow
@@ -23,10 +23,10 @@ Feature: Login to the app
 
   @4 @reset
   Scenario: I want to see the detail screen of the first result from shop back go
-    Given I login to the app
+    Given I am on quick access page
     And I click on ShopBack GO button
     And I click on Deny button
-    #or Allow
+    #Deny or Allow
     And I should see the shop back go screen
-    When I click on first result from shop back go result
+    When I click on 2nd result from shop back go result
     Then I should see the text Outlet Details

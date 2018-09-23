@@ -4,7 +4,6 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import pages.SignInPage;
 import utils.AppiumHelper;
@@ -34,27 +33,18 @@ public class SignInSteps extends SignInPage {
         logout();
     }
 
-    @Then("^I should see the text (.*)$")
-    public void iShouldSeeTheTextSignUpWithEmail(String visibilityText) throws Throwable {
-        String textPath = String.format("//android.widget.TextView[@text='%s']", visibilityText);
-        AppiumHelper.waitForVisibilityOfElement(By.xpath(textPath));
-        Assert.assertTrue(AppiumHelper.checkVisiablityOfText(textPath));
-    }
-
-    @When("^I click on (.*) button$")
-    public void iClickOnShopBackGoButton(String visibilityText) throws Throwable {
-        String textPath = String.format("//*[@text='%s']", visibilityText);
-        AppiumHelper.waitForVisibilityOfElement(By.xpath(textPath));
-        AppiumHelper.clickOnButton(textPath);
-    }
-
     @Then("^I should see the shop back go screen$")
     public void iShouldSeeTheShopBackGoScreen() throws Throwable {
         Assert.assertTrue(AppiumHelper.checkElementExists(shopBackGoTitle));
     }
 
-    @When("^I click on first result from shop back go result$")
-    public void iClickOnFirstResultFromShopBackGoResult() throws Throwable {
-        clickOnFirstResultfromSBG();
+    @When("^I click on (\\d+)(?:st|nd|rd|th) result from shop back go result$")
+    public void iClickOnFirstResultFromShopBackGoResult(int resultRow) throws Throwable {
+        clickOnFirstResultfromSBG(resultRow);
+    }
+
+    @Given("^I am on quick access page$")
+    public void iAmOnQuickAccessPage() throws Throwable {
+        verifyQuickAccessScreen();
     }
 }

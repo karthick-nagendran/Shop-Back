@@ -45,13 +45,13 @@ public class ConfigDriver {
         if (scenario.getSourceTagNames().contains("@reset")) {
             capabilities.setCapability(MobileCapabilityType.FULL_RESET, true);
             capabilities.setCapability(MobileCapabilityType.NO_RESET, false);
-
+            capabilities.setCapability("appWaitActivity", "com.shopback.app.ui.splash.SplashActivity");
         } else {
             capabilities.setCapability(MobileCapabilityType.FULL_RESET, false);
             capabilities.setCapability(MobileCapabilityType.NO_RESET, true);
+            capabilities.setCapability("appWaitActivity", "com.shopback.app.ui.main.MainActivity");
         }
         capabilities.setCapability("automationName", "uiautomator2");
-        capabilities.setCapability("appWaitActivity", "com.shopback.app.ui.splash.SplashActivity");
         driver = new AndroidDriver<MobileElement>(appiumDriverLocalService.getUrl(), capabilities);
     }
 
