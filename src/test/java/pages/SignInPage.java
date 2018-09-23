@@ -15,7 +15,7 @@ public class SignInPage extends ConfigDriver {
         AppiumHelper.waitForVisibilityOfElement(getStartedBtn);
         driver.findElement(getStartedBtn).click();
         driver.findElement(loginSelectBtn).click();
-        driver.findElement(emailTextField).sendKeys("Phanikusumanchi@gmail.com");
+        driver.findElement(emailTextField).sendKeys("venkatesh.polina27@gmail.com");
         driver.findElement(pswField).sendKeys("pass123");
         driver.findElement(signInBtn).click();
         AppiumHelper.waitForVisibilityOfElement(shopBackGoBtn);

@@ -30,3 +30,16 @@ Feature: Login to the app
     And I should see the shop back go screen
     When I click on 2nd result from shop back go result
     Then I should see the text Outlet Details
+
+
+  @5 @reset
+  Scenario: I want to see Rides screen
+    Given I am on quick access page
+    When I click on Rides button
+    Then I should see the text HAIL A RIDE
+
+  @6 @reset
+    Scenario: I want to see Dining screen
+    Given I am on quick access page
+    When I click on Dining button
+    Then I should see the text Dining
